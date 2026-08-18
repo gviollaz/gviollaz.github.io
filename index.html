@@ -1,49 +1,932 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sitio de prueba — Curso de Marketing Digital</title>
-  <meta name="description" content="Sitio de ejemplo publicado con GitHub Pages para el curso de Marketing Digital.">
-  <style>
-    :root { --fg:#111; --bg:#fff; --muted:#555; --accent:#00309A; }
-    @media (prefers-color-scheme: dark) {
-      :root { --fg:#eee; --bg:#111; --muted:#aaa; --accent:#6f9bff; }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin:0; padding:3rem 1.25rem;
-      font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      color:var(--fg); background:var(--bg);
-      display:flex; justify-content:center;
-    }
-    main { max-width:42rem; width:100%; }
-    h1 { font-size:1.9rem; line-height:1.2; margin:0 0 .5rem; }
-    p.lead { color:var(--muted); margin-top:0; }
-    .badge {
-      display:inline-block; padding:.2rem .6rem; border-radius:999px;
-      background:var(--accent); color:#fff; font-size:.75rem;
-      letter-spacing:.04em; text-transform:uppercase; margin-bottom:1rem;
-    }
-    code { background:rgba(127,127,127,.18); padding:.1rem .35rem; border-radius:4px; }
-    footer { margin-top:3rem; font-size:.85rem; color:var(--muted); }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- =====================================================================
+     [IA 2026-08-18] NOINDEX DE DEMOSTRACION
+     Esta linea le pide a Google que NO indexe el sitio. Esta puesta a
+     proposito: Servicios Jemky es una empresa real y los telefonos son de
+     personas reales. Publicar esto indexado sin la aprobacion del cliente
+     le genera llamadas que no pidio.
+     PARA PASAR A PRODUCCION hacen falta DOS cambios:
+       1) borrar la linea <meta name="robots"> de abajo
+       2) poner  en_produccion: true  en assets/js/config.js
+     ===================================================================== -->
+<meta name="robots" content="noindex, nofollow">
+
+<title>Servicios Jemky | Hidráulica, Neumática y Mecánica Industrial en Salta</title>
+<meta name="description" content="Más de 40 años en Salta reparando, fabricando y mecanizando equipos hidráulicos, neumáticos y maquinaria pesada. Taller propio, mecanizado de grandes dimensiones y venta de componentes industriales.">
+<meta name="theme-color" content="#15171B">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Servicios Jemky | Hidráulica, Neumática y Mecánica Industrial">
+<meta property="og:description" content="Más de 40 años brindando soluciones, reparación, fabricación, mecanizado y mantenimiento para la industria y maquinaria pesada. Salta, Argentina.">
+<meta property="og:locale" content="es_AR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2315171B'/><text x='16' y='23' font-family='Arial Narrow,Arial' font-size='19' font-weight='bold' fill='%23FFB800' text-anchor='middle'>J</text></svg>">
 </head>
 <body>
-  <main>
-    <span class="badge">Placeholder</span>
-    <h1>El sitio está publicado</h1>
-    <p class="lead">
-      Si estás leyendo esto en el navegador, GitHub Pages está sirviendo el repositorio
-      correctamente. Este archivo es sólo un marcador de posición.
-    </p>
-    <p>
-      Para construir el sitio real, editá <code>index.html</code> en este repositorio
-      y hacé <code>git push</code>. GitHub reconstruye y publica en menos de un minuto.
-    </p>
-    <footer>
-      Curso de Marketing Digital · Sitio de ejemplo
-    </footer>
-  </main>
+
+<!-- ===================== SPRITE DE ICONOS ===================== -->
+<svg style="display:none" aria-hidden="true">
+<defs>
+ <g id="s" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></g>
+</defs>
+
+<symbol id="i-tel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+
+<symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5v-.5c-.1-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-2.9.8.8-2.8-.2-.3a8.2 8.2 0 1 1 7 3.7z"/></symbol>
+
+<symbol id="i-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-arriba" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l6-6 6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+<symbol id="i-check-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.2l2.7 2.7L16 9.5"/></symbol>
+<symbol id="i-buscar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></symbol>
+<symbol id="i-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21.4 11.1l-9.2 9.2a5.5 5.5 0 0 1-7.8-7.8l9.2-9.2a3.7 3.7 0 0 1 5.2 5.2l-9.2 9.2a1.8 1.8 0 0 1-2.6-2.6l8.5-8.5"/></symbol>
+<symbol id="i-alerta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+<symbol id="i-mapa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2.5 6.5l9.5 7 9.5-7"/></symbol>
+<symbol id="i-reloj" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></symbol>
+
+<!-- valores -->
+<symbol id="i-medalla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.2 14.3L7 22l5-2.8L17 22l-1.2-7.7"/></symbol>
+<symbol id="i-escudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.2l8 3v6c0 5-3.4 9.6-8 10.8C7.4 20.8 4 16.2 4 11.2v-6z"/><path d="M8.7 11.8l2.3 2.3 4.3-4.6"/></symbol>
+<symbol id="i-manos" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11.5l3.5-3.5 4 1.5 3-1 3 1 4-1.5L23 11.5"/><path d="M9.5 9.5l2.6 2.6a1.8 1.8 0 0 0 2.6 0"/><path d="M5.5 8V17a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8"/></symbol>
+<symbol id="i-llave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.2 6.3a4.5 4.5 0 0 0 5.9 5.9l-8 8a3 3 0 0 1-4.3-4.3z"/><path d="M14.2 6.3l1.9-1.9a4.5 4.5 0 0 1 4 4"/></symbol>
+<symbol id="i-lampara" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 2.5a6.5 6.5 0 0 0-4 11.6V16h8v-1.9a6.5 6.5 0 0 0-4-11.6z"/></symbol>
+
+<!-- industria -->
+<symbol id="i-engranaje" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2v.2a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H1a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 2.4 7a1.7 1.7 0 0 0-.3-1.8L2 5.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H7a1.7 1.7 0 0 0 1-1.5V1a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V7a1.7 1.7 0 0 0 1.5 1H23a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" transform="translate(1 1) scale(0.92)"/></symbol>
+<symbol id="i-cilindro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7.5" width="11" height="9" rx="1.5"/><path d="M13 12h6M19 9.5v5M4.5 7.5v9M22 10.5v3"/></symbol>
+<symbol id="i-compresor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9" width="14" height="8" rx="4"/><path d="M16.5 13h4M20.5 10v6M6 9V6.5h5V9"/><circle cx="8.5" cy="13" r="1.6"/></symbol>
+<symbol id="i-excavadora" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><rect x="3" y="13.5" width="8" height="4.5" rx="1"/><circle cx="5.5" cy="18" r="1.6"/><circle cx="9" cy="18" r="1.6"/><path d="M8 13.5V11h4l4-6M16 5l4 5-2.5 2.5"/><path d="M14.5 12.5l3 3-1.5 2.5h-5z"/></symbol>
+<symbol id="i-motor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h3V7.5h4V10h3l3-2.5v9L14 14h-3v2.5H7V14H4z"/><path d="M17 10h3v4h-3"/></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/><rect x="9.8" y="9.8" width="4.4" height="4.4" rx=".6"/><path d="M9.5 3v3.5M14.5 3v3.5M9.5 17.5V21M14.5 17.5V21M3 9.5h3.5M3 14.5h3.5M17.5 9.5H21M17.5 14.5H21"/></symbol>
+<symbol id="i-gancho" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"/><path d="M12 12a4 4 0 1 0 4 4"/><path d="M8.5 4.5h7"/></symbol>
+<symbol id="i-torno" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19h20"/><rect x="3" y="9" width="6" height="6" rx="1"/><path d="M9 12h7"/><path d="M16 8.5l4 3.5-4 3.5z"/><path d="M12 15v4"/></symbol>
+<symbol id="i-caja" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8.5v7a2 2 0 0 1-1 1.7l-7 3.5a2 2 0 0 1-2 0l-7-3.5a2 2 0 0 1-1-1.7v-7a2 2 0 0 1 1-1.7l7-3.5a2 2 0 0 1 2 0l7 3.5a2 2 0 0 1 1 1.7z"/><path d="M3.3 7.4L12 12l8.7-4.6M12 21.5V12"/></symbol>
+<symbol id="i-manometro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="7.5"/><path d="M12 11l3.5-3M12 19.5V22M9.5 22h5"/></symbol>
+<symbol id="i-anillo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/></symbol>
+<symbol id="i-tubo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h10a4 4 0 0 1 4 4v0a4 4 0 0 0 4 4h2"/><path d="M2 16h6"/><path d="M2 6v4M22 14v4"/></symbol>
+<symbol id="i-acople" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4M18 12h4"/><rect x="6" y="8.5" width="5" height="7" rx="1"/><rect x="13" y="8.5" width="5" height="7" rx="1"/><path d="M11 12h2"/></symbol>
+<symbol id="i-gota" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7l5.3 6.6a6.8 6.8 0 1 1-10.6 0z"/></symbol>
+<symbol id="i-manguera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c3 0 3-6 6-6s3 6 6 6 3-6 6-6"/><rect x="1" y="12.5" width="2.5" height="5" rx=".6"/><rect x="20.5" y="6.5" width="2.5" height="5" rx=".6"/></symbol>
+<symbol id="i-valvula" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4M18 12h4"/><path d="M6 8l6 4-6 4zM18 8l-6 4 6 4z"/><path d="M12 12V5M8.5 5h7"/></symbol>
+<symbol id="i-martillo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="5" rx="1"/><path d="M10.5 7.5v6h3v-6M12 13.5V21"/><path d="M9.5 21h5"/></symbol>
+<symbol id="i-mina" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20L15 8l-3.5 5-2-2.5z"/><path d="M15 8l2-4"/></symbol>
+<symbol id="i-grua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4h3l13 3.5"/><path d="M4 8h16M17 7.5V12M15 12h4l-2 3z"/><path d="M2 21h8"/></symbol>
+<symbol id="i-camion" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5h12v10h-12z"/><path d="M13.5 10h4l3 3.5v3h-7z"/><circle cx="6" cy="18.5" r="1.8"/><circle cx="17" cy="18.5" r="1.8"/></symbol>
+<symbol id="i-fabrica" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21V10l6 3.5V10l6 3.5V10l6 3.5V21z"/><path d="M4.5 10V3.5h3V10"/><path d="M7 17h2M13 17h2"/></symbol>
+<symbol id="i-agro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V8"/><path d="M12 12c-3.5 0-4.5-2.5-4.5-5 2.5 0 4.5 1 4.5 5zM12 12c3.5 0 4.5-2.5 4.5-5-2.5 0-4.5 1-4.5 5z"/><path d="M12 8c0-3 1.5-4.5 3-5.5C15 5 14 7 12 8z"/><path d="M4 21h16"/></symbol>
+<symbol id="i-taller" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12z"/><path d="M9 21v-6h6v6"/></symbol>
+<symbol id="i-soldadura" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 3l-9 9"/><path d="M13.5 8.5l2.5 2.5"/><path d="M11 12l-2 5 5-2z"/><path d="M3 21c2-1 4-1 6 0"/></symbol>
+<symbol id="i-regla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="8" rx="1"/><path d="M6 8v3M10 8v4M14 8v3M18 8v4"/></symbol>
+</svg>
+
+<!-- ===================== BARRA DEMO ===================== -->
+<div class="demo" id="barra-demo">
+  <strong>SITIO DE DEMOSTRACIÓN</strong> — Ejemplo del curso de Marketing Digital. No es el sitio oficial de Servicios Jemky.
+</div>
+
+<!-- ===================== CABECERA ===================== -->
+<header class="cabecera">
+  <div class="cabecera__tel">
+    <div class="contenedor" id="tel-cabecera"><!-- lo llena app.js desde config.js --></div>
+  </div>
+
+  <div class="cabecera__barra">
+    <div class="contenedor">
+      <a href="#inicio" class="logo" aria-label="Servicios Jemky, ir al inicio">
+        <svg class="logo__marca" viewBox="0 0 44 44" aria-hidden="true">
+          <rect width="44" height="44" rx="5" fill="#FFB800"/>
+          <path d="M7 7h30v4H7zM7 33h30v4H7z" fill="#15171B" opacity=".35"/>
+          <text x="22" y="30" font-family="Arial Narrow, Arial" font-size="22" font-weight="bold" fill="#15171B" text-anchor="middle">SJ</text>
+        </svg>
+        <span class="logo__txt">
+          <span class="logo__nombre">Servicios Jemky</span>
+          <span class="logo__rubro">Hidráulica · Neumática · Mecánica</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#empresa">Empresa</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#maquinados">Maquinados</a>
+        <a href="#productos">Productos</a>
+        <a href="#sectores">Sectores</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="btn btn--primario" id="cta-nav-movil">Solicitar presupuesto</a>
+      </nav>
+
+      <div class="cabecera__cta">
+        <a href="#contacto" class="btn btn--primario">
+          <svg aria-hidden="true"><use href="#i-doc"/></svg>Solicitar <span>presupuesto</span>
+        </a>
+      </div>
+
+      <button class="hamburguesa" id="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <svg aria-hidden="true"><use href="#i-menu" id="icono-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="franja"></div>
+</header>
+
+<main>
+
+<!-- ===================== 1. HERO ===================== -->
+<section class="hero" id="inicio">
+  <div class="hero__fondo"></div>
+  <div class="hero__trama"></div>
+
+  <svg class="hero__grafico" viewBox="0 0 640 420" aria-hidden="true">
+    <!-- [IA 2026-08-18] Ilustracion propia: brazo de retroexcavadora + cilindro
+         hidraulico. Es el respaldo visual mientras no haya foto real del taller. -->
+    <g fill="none" stroke="#FFB800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
+      <path d="M120 360h480"/>
+      <rect x="150" y="286" width="170" height="62" rx="8"/>
+      <circle cx="192" cy="352" r="20"/><circle cx="248" cy="352" r="20"/><circle cx="300" cy="352" r="14"/>
+      <path d="M255 286v-38h72l86-128"/>
+      <path d="M413 120l72 96-52 46"/>
+      <path d="M395 244l58 56-30 52h-98z"/>
+      <path d="M325 352l10-30M355 352l10-30M385 352l10-30"/>
+      <path d="M300 250l86-96" stroke-width="9" opacity=".3"/>
+      <path d="M430 148l44 62" stroke-width="9" opacity=".3"/>
+    </g>
+    <g fill="none" stroke="#FFB800" stroke-width="2.4" opacity=".45">
+      <rect x="60" y="72" width="132" height="52" rx="10"/>
+      <path d="M192 98h96M288 82v32M60 84v28"/>
+      <circle cx="126" cy="98" r="15"/>
+    </g>
+  </svg>
+
+  <div class="contenedor">
+    <div class="hero__caja">
+      <span class="hero__etiqueta">Salta Capital · Argentina</span>
+      <h1>Soluciones en <em>hidráulica, neumática</em> y mecánica industrial</h1>
+      <p class="hero__bajada">
+        Más de 40 años brindando soluciones, reparación, fabricación, mecanizado y
+        mantenimiento para la industria y maquinaria pesada.
+      </p>
+      <div class="hero__botones">
+        <a href="#contacto" class="btn btn--primario btn--grande">
+          <svg aria-hidden="true"><use href="#i-doc"/></svg>Solicitar presupuesto
+        </a>
+        <a href="#servicios" class="btn btn--linea btn--grande">Ver servicios</a>
+        <a href="#contacto" class="btn btn--linea btn--grande">Contactarnos</a>
+      </div>
+
+      <div class="indicadores">
+        <div class="indicador">
+          <div class="indicador__num">+40</div>
+          <div class="indicador__txt">Años de experiencia</div>
+        </div>
+        <div class="indicador">
+          <div class="indicador__num">100%</div>
+          <div class="indicador__txt">Servicio técnico especializado</div>
+        </div>
+        <div class="indicador">
+          <div class="indicador__num">A medida</div>
+          <div class="indicador__txt">Soluciones para cada equipo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. EMPRESA ===================== -->
+<section class="seccion" id="empresa">
+  <div class="contenedor">
+    <div class="encabezado aparece">
+      <span class="eyebrow">La empresa</span>
+      <h2>Más de 40 años de experiencia</h2>
+    </div>
+
+    <div class="empresa">
+      <div class="empresa__texto aparece">
+        <p class="empresa__destacado">
+          Servicios Jemky es una empresa de Salta especializada en hidráulica, neumática,
+          mecánica, mecanizado y mantenimiento de maquinaria industrial y pesada.
+        </p>
+        <p>
+          Contamos con más de 40 años de experiencia acompañando a empresas y profesionales
+          que necesitan soluciones confiables para sus equipos y procesos.
+        </p>
+        <p>
+          Nuestro trabajo se basa en la honestidad, la seriedad, el compromiso y el dinamismo.
+        </p>
+        <p>
+          Nuestro objetivo es brindar a cada cliente un servicio de confianza y calidad,
+          analizando cada necesidad y ofreciendo las mejores alternativas tanto en materiales
+          como en procedimientos de trabajo.
+        </p>
+        <p>
+          Contamos con un equipo de profesionales comprometidos y experiencia para resolver
+          desde reparaciones específicas hasta desarrollos industriales y proyectos integrales.
+        </p>
+      </div>
+
+      <div class="valores aparece">
+        <div class="valor">
+          <svg class="valor__ico" aria-hidden="true"><use href="#i-medalla"/></svg>
+          <h3>Experiencia</h3>
+          <p>Más de cuatro décadas en el rubro industrial</p>
+        </div>
+        <div class="valor">
+          <svg class="valor__ico" aria-hidden="true"><use href="#i-escudo"/></svg>
+          <h3>Calidad</h3>
+          <p>Materiales y procedimientos de trabajo verificados</p>
+        </div>
+        <div class="valor">
+          <svg class="valor__ico" aria-hidden="true"><use href="#i-manos"/></svg>
+          <h3>Compromiso</h3>
+          <p>Honestidad, seriedad y dinamismo en cada trabajo</p>
+        </div>
+        <div class="valor">
+          <svg class="valor__ico" aria-hidden="true"><use href="#i-llave"/></svg>
+          <h3>Servicio técnico</h3>
+          <p>Personal especializado y taller propio</p>
+        </div>
+        <div class="valor">
+          <svg class="valor__ico" aria-hidden="true"><use href="#i-lampara"/></svg>
+          <h3>Soluciones</h3>
+          <p>Desarrollos a medida para cada necesidad</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. SERVICIOS (3 CATEGORIAS) ===================== -->
+<section class="seccion seccion--gris" id="servicios">
+  <div class="contenedor">
+    <div class="encabezado encabezado--centro aparece">
+      <span class="eyebrow">Qué hacemos</span>
+      <h2>Servicios destacados</h2>
+      <p>Tres grandes áreas de trabajo que cubren desde la reparación puntual de un
+         componente hasta el proyecto industrial llave en mano.</p>
+    </div>
+
+    <div class="servicios3">
+      <article class="tarjeta-srv aparece">
+        <div class="tarjeta-srv__visual">
+          <span class="tarjeta-srv__num">01</span>
+          <svg aria-hidden="true"><use href="#i-llave"/></svg>
+        </div>
+        <div class="tarjeta-srv__cuerpo">
+          <h3>Taller y reparaciones</h3>
+          <p>Servicio técnico especializado en equipos hidráulicos, neumáticos, maquinaria
+             vial, maquinaria pesada y sistemas mecánicos.</p>
+          <a href="#taller" class="tarjeta-srv__link">Ver detalle <svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
+        </div>
+      </article>
+
+      <article class="tarjeta-srv aparece">
+        <div class="tarjeta-srv__visual">
+          <span class="tarjeta-srv__num">02</span>
+          <svg aria-hidden="true"><use href="#i-torno"/></svg>
+        </div>
+        <div class="tarjeta-srv__cuerpo">
+          <h3>Maquinados y fabricación</h3>
+          <p>Mecanizado de grandes dimensiones, fabricación de componentes y desarrollo
+             de máquinas para procesos industriales.</p>
+          <a href="#maquinados" class="tarjeta-srv__link">Ver detalle <svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
+        </div>
+      </article>
+
+      <article class="tarjeta-srv aparece">
+        <div class="tarjeta-srv__visual">
+          <span class="tarjeta-srv__num">03</span>
+          <svg aria-hidden="true"><use href="#i-caja"/></svg>
+        </div>
+        <div class="tarjeta-srv__cuerpo">
+          <h3>Productos y componentes</h3>
+          <p>Venta de componentes y repuestos para instalaciones hidráulicas, neumáticas
+             e industriales, con armado de mangueras en el acto.</p>
+          <a href="#productos" class="tarjeta-srv__link">Ver detalle <svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. TALLER ===================== -->
+<section class="seccion" id="taller">
+  <div class="contenedor">
+    <div class="encabezado aparece">
+      <span class="eyebrow">01 · Taller</span>
+      <h2>Taller y reparación de maquinaria</h2>
+      <p>Servicio técnico especializado en reparación y mantenimiento de equipos
+         hidráulicos, neumáticos, maquinaria vial, maquinaria pesada y sistemas mecánicos.</p>
+    </div>
+
+    <div class="grupos">
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-cilindro"/></svg>
+          <h3>Hidráulica</h3>
+        </div>
+        <ul>
+          <li>Reparación de cilindros hidráulicos de todas las marcas</li>
+          <li>Calibración de bombas hidráulicas</li>
+          <li>Calibración y reparación de comandos PowerShift</li>
+          <li>Equipos Mannesmann Rexroth y Bosch</li>
+          <li>Reparación de patas de apoyo</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-compresor"/></svg>
+          <h3>Neumática y aire comprimido</h3>
+        </div>
+        <ul>
+          <li>Reparación de compresores estacionarios y móviles</li>
+          <li>Reparación de martillos neumáticos</li>
+          <li>Reparación de perforadores</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-excavadora"/></svg>
+          <h3>Maquinaria vial y pesada</h3>
+        </div>
+        <ul>
+          <li>Reparación de máquinas viales</li>
+          <li>Reparación de motoniveladoras</li>
+          <li>Servicio para equipos Komatsu, Caterpillar, John Deere y otras marcas</li>
+          <li>Reparación de tren rodante</li>
+          <li>Reparación de maquinaria pesada, vial y camiones</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-motor"/></svg>
+          <h3>Motores y transmisión</h3>
+        </div>
+        <ul>
+          <li>Reparación de motores</li>
+          <li>Reparación de transmisiones</li>
+          <li>Reparación de cajas diferenciales</li>
+          <li>Reparación de cajas de velocidad Bosch, ZF y Eaton</li>
+          <li>Reparación de turbo</li>
+          <li>Reparación de bombas inyectoras</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-chip"/></svg>
+          <h3>Electrónica y diagnóstico</h3>
+        </div>
+        <ul>
+          <li>Reseteo de computadoras de maquinaria vial y equipos pesados</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-gancho"/></svg>
+          <h3>Elevación y servicios especiales</h3>
+        </div>
+        <ul>
+          <li>Reparación de guinches a cable y cadena</li>
+          <li>Servicio de pozo de agua</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. MAQUINADOS ===================== -->
+<section class="seccion seccion--oscura" id="maquinados">
+  <div class="contenedor">
+    <div class="encabezado aparece">
+      <span class="eyebrow">02 · Maquinados</span>
+      <h2>Mecanizado, fabricación y soluciones industriales</h2>
+      <p>Contamos con capacidad para fabricar, reparar y mecanizar componentes industriales,
+         realizando trabajos tanto unitarios como en serie.</p>
+    </div>
+
+    <h3 style="color:#FFB800; margin-bottom:.4rem;">Capacidad de mecanizado</h3>
+    <div class="capacidades">
+      <div class="capacidad aparece">
+        <div class="capacidad__rot">Torneados mecánicos</div>
+        <div class="capacidad__num">5.000 × 1.200</div>
+        <div class="capacidad__um">milímetros — hasta</div>
+      </div>
+      <div class="capacidad aparece">
+        <div class="capacidad__rot">Fresados</div>
+        <div class="capacidad__num">1.700 × 700 × 700</div>
+        <div class="capacidad__um">milímetros — hasta</div>
+      </div>
+      <div class="capacidad aparece">
+        <div class="capacidad__rot">Cepillados</div>
+        <div class="capacidad__num">2.700</div>
+        <div class="capacidad__um">milímetros — hasta</div>
+      </div>
+      <div class="capacidad aparece">
+        <div class="capacidad__rot">Grandes perforaciones</div>
+        <div class="capacidad__num">2.000</div>
+        <div class="capacidad__um">milímetros — radial de hasta</div>
+      </div>
+    </div>
+
+    <div class="grupos">
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-cilindro"/></svg>
+          <h3>Fabricación y reparación</h3>
+        </div>
+        <ul>
+          <li>Fabricación de cilindros hidráulicos</li>
+          <li>Fabricación de cilindros neumáticos</li>
+          <li>Fabricación y reparación de vástagos macizos</li>
+          <li>Fabricación y reparación de vástagos huecos</li>
+          <li>Camisas</li>
+          <li>Pistones</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-torno"/></svg>
+          <h3>Maquinado de componentes</h3>
+        </div>
+        <ul>
+          <li>Maquinado de pernos</li>
+          <li>Maquinado de bujes</li>
+          <li>Maquinados unitarios</li>
+          <li>Maquinados en pequeñas y grandes series</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-excavadora"/></svg>
+          <h3>Implementos de maquinaria vial</h3>
+        </div>
+        <ul>
+          <li>Reparación de baldes de penetración de retroexcavadoras</li>
+          <li>Reparación de palas cargadoras</li>
+          <li>Reparación de baldes de trabajo</li>
+          <li>Fabricación y reparación de uñas y cuchillas para motoniveladoras y retroexcavadoras</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-soldadura"/></svg>
+          <h3>Soldadura</h3>
+        </div>
+        <ul>
+          <li>Soldaduras y rellenos</li>
+          <li>Soldadura MAG</li>
+          <li>Soldadura MIG</li>
+          <li>Soldadura TIG</li>
+          <li>Soldaduras convencionales</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-regla"/></svg>
+          <h3>Rectificado</h3>
+        </div>
+        <ul>
+          <li>Rectificados planos</li>
+          <li>Rectificados tangenciales</li>
+          <li>Rectificados con y sin centro</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-escudo"/></svg>
+          <h3>Materiales especiales</h3>
+        </div>
+        <ul>
+          <li>Fabricación de elementos y máquinas en acero inoxidable</li>
+          <li>Fabricación en aleaciones especiales</li>
+          <li>Fabricación en titanio</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-engranaje"/></svg>
+          <h3>Máquinas y automatización</h3>
+        </div>
+        <ul>
+          <li>Fabricación y reparación de máquinas para procesos industriales</li>
+          <li>Modernización de máquinas</li>
+          <li>Aplicación de sistemas neumáticos</li>
+          <li>Aplicación de sistemas hidráulicos</li>
+          <li>Aplicación de sistemas electrónicos</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-camion"/></svg>
+          <h3>Transporte y estructuras</h3>
+        </div>
+        <ul>
+          <li>Cintas transportadoras</li>
+          <li>Chimangos</li>
+          <li>Fabricación y reparación de acoplados</li>
+          <li>Fabricación y reparación de trineos normalizados</li>
+        </ul>
+      </article>
+
+      <article class="grupo aparece">
+        <div class="grupo__cab">
+          <svg class="grupo__ico" aria-hidden="true"><use href="#i-grua"/></svg>
+          <h3>Proyectos industriales</h3>
+        </div>
+        <ul>
+          <li>Construcciones bajo plano</li>
+          <li>Proyectos industriales</li>
+          <li>Proyectos llave en mano</li>
+          <li>Montajes</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. PRODUCTOS ===================== -->
+<section class="seccion seccion--gris" id="productos">
+  <div class="contenedor">
+    <div class="encabezado aparece">
+      <span class="eyebrow">03 · Productos</span>
+      <h2>Componentes hidráulicos, neumáticos e industriales</h2>
+      <p>Además de nuestros servicios de reparación y fabricación, ofrecemos una amplia
+         variedad de componentes y repuestos para instalaciones hidráulicas, neumáticas
+         e industriales.</p>
+    </div>
+
+    <div class="destacado-mangueras aparece">
+      <svg aria-hidden="true"><use href="#i-manguera"/></svg>
+      <div>
+        <strong>Armado de mangueras hidráulicas en el acto</strong>
+        <span>Acerque la manguera al taller y se la preparamos en el momento.</span>
+      </div>
+    </div>
+
+    <div class="buscador">
+      <svg aria-hidden="true"><use href="#i-buscar"/></svg>
+      <label for="buscar-prod" class="solo-lectores">Buscar producto</label>
+      <input type="search" id="buscar-prod" placeholder="Buscar producto: o-ring, manómetro, teflón, bomba…" autocomplete="off">
+    </div>
+
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar productos por categoría">
+      <button class="filtro activo" data-cat="todos">Todos</button>
+      <button class="filtro" data-cat="sellado">Sellado</button>
+      <button class="filtro" data-cat="instrumentacion">Instrumentación</button>
+      <button class="filtro" data-cat="conexiones">Conexiones</button>
+      <button class="filtro" data-cat="tubos">Tubos</button>
+      <button class="filtro" data-cat="acoples">Acoples rápidos</button>
+      <button class="filtro" data-cat="lubricacion">Lubricación</button>
+      <button class="filtro" data-cat="materiales">Materiales especiales</button>
+      <button class="filtro" data-cat="mangueras">Mangueras</button>
+      <button class="filtro" data-cat="hidraulica">Hidráulica</button>
+      <button class="filtro" data-cat="valvulas">Válvulas</button>
+      <button class="filtro" data-cat="otros">Otros</button>
+    </div>
+
+    <div class="productos" id="grilla-productos">
+      <article class="prod" data-cat="sellado">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-anillo"/></svg><h3>Sellado</h3></div>
+        <ul><li>Juntas tóricas</li><li>O-Rings comunes y especiales</li><li>O-Rings cuadrados</li><li>Sellos</li><li>Guarniciones</li><li>Empaquetaduras especiales</li></ul>
+      </article>
+
+      <article class="prod" data-cat="instrumentacion">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-manometro"/></svg><h3>Instrumentación</h3></div>
+        <ul><li>Manómetros</li><li>Vacuómetros</li><li>Presostatos</li></ul>
+      </article>
+
+      <article class="prod" data-cat="conexiones">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-acople"/></svg><h3>Conexiones y accesorios</h3></div>
+        <ul><li>Seguros Seeger</li><li>Espinas elásticas</li><li>Conexiones hidráulicas</li><li>Conexiones neumáticas</li><li>Accesorios hidráulicos y neumáticos</li></ul>
+      </article>
+
+      <article class="prod" data-cat="tubos">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-tubo"/></svg><h3>Tubos</h3></div>
+        <ul><li>Poliamida</li><li>Nylon</li><li>Polietileno</li><li>Teflón</li><li>Cobre</li><li>Aluminio</li><li>Acero</li></ul>
+      </article>
+
+      <article class="prod" data-cat="acoples">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-acople"/></svg><h3>Acoples rápidos</h3></div>
+        <ul><li>Acero</li><li>Bronce</li><li>Aluminio</li><li>Polipropileno</li></ul>
+      </article>
+
+      <article class="prod" data-cat="lubricacion">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-gota"/></svg><h3>Lubricación</h3></div>
+        <ul><li>Sistemas de lubricación</li><li>Sistemas de engrase</li><li>Alemites y niples</li></ul>
+      </article>
+
+      <article class="prod" data-cat="materiales">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-escudo"/></svg><h3>Materiales especiales</h3></div>
+        <ul><li>Accesorios de acero inoxidable</li><li>Alloy 400/K500</li><li>Titanio</li></ul>
+      </article>
+
+      <article class="prod" data-cat="mangueras">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-manguera"/></svg><h3>Mangueras industriales</h3></div>
+        <ul><li>Aire</li><li>Agua</li><li>Vapor</li><li>Hidrocarburos</li><li>Áridos</li><li>Hidráulica</li></ul>
+      </article>
+
+      <article class="prod" data-cat="hidraulica">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-cilindro"/></svg><h3>Hidráulica</h3></div>
+        <ul><li>Bombas hidráulicas</li><li>Motores hidráulicos</li><li>Válvulas</li><li>Cilindros</li><li>Partes y reparaciones</li></ul>
+      </article>
+
+      <article class="prod" data-cat="valvulas">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-valvula"/></svg><h3>Válvulas</h3></div>
+        <ul><li>Esféricas</li><li>Esclusas</li><li>Globo</li><li>Cuchilla</li><li>Mariposa</li></ul>
+      </article>
+
+      <article class="prod" data-cat="otros">
+        <div class="prod__cab"><svg class="prod__ico" aria-hidden="true"><use href="#i-martillo"/></svg><h3>Otros productos</h3></div>
+        <ul><li>Martillos neumáticos</li><li>Perforadores neumáticos</li><li>Puntas</li><li>Mechas</li><li>Compresores estacionarios</li></ul>
+      </article>
+
+      <p class="sin-resultados oculto" id="sin-resultados">
+        No encontramos productos con ese término.<br>
+        Probá con otra palabra o <a href="#contacto" style="color:#D99B00; font-weight:600;">consultanos directamente</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. SECTORES ===================== -->
+<section class="seccion seccion--oscura" id="sectores">
+  <div class="contenedor">
+    <div class="encabezado encabezado--centro aparece">
+      <span class="eyebrow">Sectores</span>
+      <h2>Soluciones para diferentes industrias</h2>
+      <p>Analizamos cada necesidad para desarrollar una solución adecuada al tipo de trabajo,
+         maquinaria y condiciones de operación.</p>
+    </div>
+
+    <div class="sectores">
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-mina"/></svg><h3>Minería</h3></div>
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-grua"/></svg><h3>Construcción</h3></div>
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-excavadora"/></svg><h3>Maquinaria vial</h3></div>
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-camion"/></svg><h3>Transporte pesado</h3></div>
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-engranaje"/></svg><h3>Industria</h3></div>
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-llave"/></svg><h3>Talleres</h3></div>
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-agro"/></svg><h3>Agroindustria</h3></div>
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-taller"/></svg><h3>Empresas de mantenimiento</h3></div>
+      <div class="sector aparece"><svg class="sector__ico" aria-hidden="true"><use href="#i-fabrica"/></svg><h3>Plantas industriales</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. DIFERENCIALES ===================== -->
+<section class="seccion">
+  <div class="contenedor">
+    <div class="encabezado encabezado--centro aparece">
+      <span class="eyebrow">Diferenciales</span>
+      <h2>¿Por qué elegir Servicios Jemky?</h2>
+    </div>
+
+    <div class="diferenciales">
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-medalla"/></svg><span>+40 años de experiencia</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-check-c"/></svg><span>Personal especializado</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-taller"/></svg><span>Taller propio</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-torno"/></svg><span>Fabricación y reparación</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-regla"/></svg><span>Mecanizado de grandes dimensiones</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-cilindro"/></svg><span>Soluciones hidráulicas, neumáticas y mecánicas</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-manos"/></svg><span>Atención personalizada</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-lampara"/></svg><span>Proyectos a medida</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-caja"/></svg><span>Repuestos y componentes</span></div>
+      <div class="dif aparece"><svg aria-hidden="true"><use href="#i-engranaje"/></svg><span>Capacidad para trabajos industriales complejos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9. BANDA CTA ===================== -->
+<section class="banda">
+  <div class="contenedor">
+    <h2>¿Necesita reparar, fabricar o mejorar un equipo?</h2>
+    <p>Cuéntenos cuál es su necesidad. Nuestro equipo analizará el trabajo y le propondrá
+       la alternativa técnica más conveniente.</p>
+    <div class="banda__botones">
+      <a href="#contacto" class="btn btn--oscuro btn--grande">
+        <svg aria-hidden="true"><use href="#i-doc"/></svg>Solicitar presupuesto
+      </a>
+      <a href="#contacto" class="btn btn--linea-osc btn--grande">Hablar con un especialista</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 10. CONTACTO ===================== -->
+<section class="seccion seccion--gris" id="contacto">
+  <div class="contenedor">
+    <div class="encabezado aparece">
+      <span class="eyebrow">Contacto</span>
+      <h2>Solicitá tu presupuesto</h2>
+      <p>Completá el formulario con el mayor detalle posible. Cuanto mejor describas el
+         equipo y el problema, más precisa será la respuesta técnica.</p>
+    </div>
+
+    <div class="contacto">
+      <!-- ---------- formulario ---------- -->
+      <div>
+        <div class="formulario" id="caja-formulario">
+          <div class="aviso oculto" id="aviso-demo">
+            <svg aria-hidden="true"><use href="#i-alerta"/></svg>
+            <div>
+              <strong>Formulario en modo demostración.</strong>
+              Todavía no está conectado a un servicio de envío, así que la consulta
+              no llega por correo. Configurá <code>formulario.endpoint</code> en
+              <code>assets/js/config.js</code> para activarlo.
+            </div>
+          </div>
+
+          <form id="form-presupuesto" novalidate>
+            <div class="campos">
+              <div class="campo">
+                <label for="f-nombre">Nombre y apellido <span class="req">*</span></label>
+                <input type="text" id="f-nombre" name="nombre" required autocomplete="name">
+                <div class="campo__error" data-error-de="f-nombre"></div>
+              </div>
+
+              <div class="campo">
+                <label for="f-empresa">Empresa</label>
+                <input type="text" id="f-empresa" name="empresa" autocomplete="organization">
+                <div class="campo__error" data-error-de="f-empresa"></div>
+              </div>
+
+              <div class="campo">
+                <label for="f-telefono">Teléfono <span class="req">*</span></label>
+                <input type="tel" id="f-telefono" name="telefono" required autocomplete="tel" placeholder="0387-...">
+                <div class="campo__error" data-error-de="f-telefono"></div>
+              </div>
+
+              <div class="campo">
+                <label for="f-whatsapp">WhatsApp</label>
+                <input type="tel" id="f-whatsapp" name="whatsapp" placeholder="Si es distinto al teléfono">
+                <div class="campo__error" data-error-de="f-whatsapp"></div>
+              </div>
+
+              <div class="campo">
+                <label for="f-email">Email <span class="req">*</span></label>
+                <input type="email" id="f-email" name="email" required autocomplete="email">
+                <div class="campo__error" data-error-de="f-email"></div>
+              </div>
+
+              <div class="campo">
+                <label for="f-tipo">Tipo de consulta <span class="req">*</span></label>
+                <select id="f-tipo" name="tipo" required>
+                  <option value="">Seleccioná una opción…</option>
+                  <option>Reparación</option>
+                  <option>Hidráulica</option>
+                  <option>Neumática</option>
+                  <option>Maquinado</option>
+                  <option>Fabricación</option>
+                  <option>Repuestos</option>
+                  <option>Mangueras</option>
+                  <option>Maquinaria pesada</option>
+                  <option>Proyecto industrial</option>
+                  <option>Otro</option>
+                </select>
+                <div class="campo__error" data-error-de="f-tipo"></div>
+              </div>
+
+              <div class="campo campo--ancho">
+                <label for="f-detalle">Describa el equipo, problema o trabajo que necesita realizar <span class="req">*</span></label>
+                <textarea id="f-detalle" name="detalle" required
+                  placeholder="Marca y modelo del equipo, qué falla presenta, hace cuánto, si ya fue intervenido, medidas si las tiene…"></textarea>
+                <div class="campo__error" data-error-de="f-detalle"></div>
+              </div>
+
+              <div class="campo campo--ancho">
+                <label for="f-archivos">Adjuntar fotografías, PDF, planos o documentación técnica</label>
+                <div class="adjuntos" id="zona-adjuntos" tabindex="0" role="button"
+                     aria-label="Seleccionar archivos para adjuntar">
+                  <svg aria-hidden="true"><use href="#i-clip"/></svg>
+                  <strong>Arrastrá los archivos acá o hacé clic para elegirlos</strong>
+                  <span>Fotos, PDF, planos o documentos · hasta <b id="peso-max">10</b> MB por archivo</span>
+                  <input type="file" id="f-archivos" name="archivos" multiple
+                         accept="image/*,.pdf,.doc,.docx,.dwg,.dxf">
+                </div>
+                <div class="lista-adjuntos" id="lista-adjuntos"></div>
+                <div class="campo__ayuda" id="ayuda-adjuntos"></div>
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:.8rem;">
+              <button type="submit" class="btn btn--primario btn--grande" id="btn-enviar">
+                <svg aria-hidden="true"><use href="#i-doc"/></svg>Solicitar presupuesto
+              </button>
+              <a href="#" class="btn btn--wa btn--grande oculto" id="btn-wa-form">
+                <svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <!-- pantalla de exito -->
+        <div class="exito oculto" id="pantalla-exito">
+          <svg class="exito__ico" aria-hidden="true"><use href="#i-check-c"/></svg>
+          <h3>Consulta enviada</h3>
+          <p>Gracias por contactarse con Servicios Jemky. Nuestro equipo analizará su
+             consulta y se comunicará con usted.</p>
+          <button class="btn btn--linea-osc" id="btn-otra">Enviar otra consulta</button>
+        </div>
+      </div>
+
+      <!-- ---------- datos de contacto ---------- -->
+      <aside>
+        <div class="gerentes" id="lista-gerentes"><!-- lo llena app.js desde config.js --></div>
+
+        <div class="datos-empresa" style="margin-top:1rem;">
+          <h3>Servicios Jemky</h3>
+          <div class="dato">
+            <svg aria-hidden="true"><use href="#i-mapa"/></svg>
+            <span id="dato-ciudad">Salta Capital, Argentina</span>
+          </div>
+          <div class="dato oculto" id="dato-direccion">
+            <svg aria-hidden="true"><use href="#i-taller"/></svg><span></span>
+          </div>
+          <div class="dato oculto" id="dato-email">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg><span></span>
+          </div>
+          <div class="dato oculto" id="dato-horarios">
+            <svg aria-hidden="true"><use href="#i-reloj"/></svg><span></span>
+          </div>
+        </div>
+
+        <div id="caja-mapa" class="oculto" style="margin-top:1rem; border-radius:8px; overflow:hidden;"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== PIE ===================== -->
+<footer class="pie">
+  <div class="franja" style="margin-bottom:2.5rem;"></div>
+  <div class="contenedor">
+    <div class="pie__grid">
+      <div>
+        <h4>Servicios Jemky</h4>
+        <p style="color:#9AA1AC;">Hidráulica, neumática, mecánica, mecanizado y mantenimiento
+           de maquinaria industrial y pesada. Más de 40 años en Salta.</p>
+        <div class="redes oculto" id="redes"></div>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#taller">Taller y reparaciones</a></li>
+          <li><a href="#maquinados">Maquinados y fabricación</a></li>
+          <li><a href="#productos">Productos y componentes</a></li>
+          <li><a href="#sectores">Sectores que atendemos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#empresa">Quiénes somos</a></li>
+          <li><a href="#servicios">Nuestros servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul id="pie-contacto"><!-- lo llena app.js desde config.js --></ul>
+      </div>
+    </div>
+    <div class="pie__legal">
+      <span>&copy; <span id="anio"></span> Servicios Jemky · Salta, Argentina</span>
+      <span id="pie-demo">Sitio de demostración — curso de Marketing Digital</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== ACCIONES MOVILES ===================== -->
+<div class="acciones-movil" id="acciones-movil"><!-- lo llena app.js desde config.js --></div>
+
+<button class="arriba" id="btn-arriba" aria-label="Volver arriba">
+  <svg aria-hidden="true"><use href="#i-arriba"/></svg>
+</button>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
